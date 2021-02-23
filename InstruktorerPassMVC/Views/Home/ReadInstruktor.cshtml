@@ -1,0 +1,70 @@
+﻿@model InstruktorerPassMVC.Models.Instruktorer
+
+@{ 
+    ViewData["Title"] = "Visa Instruktor";
+}
+
+<h2>Information om instruktör: @Html.DisplayFor(model => model.In_Id)</h2>
+
+<div>
+    <hr/>
+    <dl class="dl-horizontal">
+        <dt>
+            Id
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.In_Id)
+        </dd>
+        <dt>
+            Förnamn
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.In_Fornamn)
+        </dd>
+        <dt>
+            Efternamn
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.In_Efternamn)
+        </dd>
+        <dt>
+            Adress
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.In_Adress)
+        </dd>
+        <dt>
+            Postnummer
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.In_Postnummer)
+        </dd>
+        <dt>
+            Ort
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.In_Ort)
+        </dd>
+        <dt>
+            Epost
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.In_Epost)
+        </dd>
+        <dt>
+            Mobilnummer
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.In_Mobil)
+        </dd>
+        <dt>
+            Personnummer
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.In_Personnummer)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="ReadAllaInstruktorer">Tillbaka</a>  
+</div>

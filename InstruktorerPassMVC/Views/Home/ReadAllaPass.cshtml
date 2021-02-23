@@ -1,0 +1,49 @@
+﻿@model IEnumerable<InstruktorerPassMVC.Models.Pass>
+
+@{
+    ViewData["Title"] = "Alla Pass";
+}
+
+<h2>Alla Pass</h2>
+
+<br />
+
+<input type="button" class="btn btn-dark" value="Lägg till ny aktivitet" onclick="@("window.location.href='" + @Url.Action("CreatePass", "Home") + "'");" />
+
+<br />
+<br />
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Aktivitet
+            </th>
+            <th>
+                Övrigt
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pa_Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pa_Aktivitet)
+                </td>
+                <td>
+                    @Html.ActionLink("Visa Pass", "ReadPass", new { id = item.Pa_Id })<br />
+                    @Html.ActionLink("Visa Passets Instruktörer", "ReadPassetHarInstruktorer", new { id = item.Pa_Id })<br />
+                    @Html.ActionLink("Radera Pass", "DeletePass", new { id = item.Pa_Id })<br />
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

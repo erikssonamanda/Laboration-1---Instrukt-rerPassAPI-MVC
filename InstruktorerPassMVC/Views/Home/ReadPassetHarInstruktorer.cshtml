@@ -1,0 +1,45 @@
+﻿@model IEnumerable<InstruktorerPassMVC.Models.InstruktorerPass>
+
+@{
+    ViewData["Title"] = "Passets Instruktorer";
+}
+
+<h2>Passets Instruktörer</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Instruktörens Id
+            </th>
+            <th>
+                Aktivitetens Id
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IP_Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IP_InstruktorId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IP_PassId)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div>
+    <a asp-action="ReadAllaPass">Tillbaka</a>
+</div>
+

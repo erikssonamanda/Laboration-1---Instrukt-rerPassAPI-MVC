@@ -1,0 +1,31 @@
+﻿@model InstruktorerPassMVC.Models.Pass
+
+@{
+    ViewData["Title"] = "Create Aktivitet";
+}
+
+<h2>Lägg till ny aktivitet</h2>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreatePass">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label class="control-label">Aktivitet</label>
+                <input asp-for="Pa_Aktivitet" class="form-control" />
+                <span asp-validation-for="Pa_Aktivitet" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Lägg till aktivitet" class="btn btn-dark" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="ReadAllaInstruktorer" class="btn btn-dark">Tillbaka</a>
+</div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

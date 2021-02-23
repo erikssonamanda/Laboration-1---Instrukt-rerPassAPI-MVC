@@ -1,0 +1,34 @@
+﻿@model InstruktorerPassMVC.Models.InstruktorerPass
+
+@{
+    ViewData["Title"] = "Visa Instruktorens Pass Detalj";
+}
+
+<h2>Information om pass: @Html.DisplayFor(model => model.IP_Id)</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Id
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IP_Id)
+        </dd>
+        <dt>
+            Instruktörens Id
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IP_InstruktorId)
+        </dd>
+        <dt>
+            Aktivitetens Id
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IP_PassId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="ReadAllaInstruktorerHarPass" class="btn btn-dark">Tillbaka</a>
+</div>

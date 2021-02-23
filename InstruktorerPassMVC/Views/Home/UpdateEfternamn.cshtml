@@ -1,0 +1,66 @@
+﻿@model InstruktorerPassMVC.Models.Instruktorer
+
+@{
+    ViewData["Title"] = "Update Efternamn";
+}
+
+<h2>Ändra Efternamn</h2>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="UpdateEfternamn">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label class="control-label">Förnamn</label>
+                <input asp-for="In_Fornamn" class="form-control" />
+                <span asp-validation-for="In_Fornamn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Efternamn</label>
+                <input asp-for="In_Efternamn" class="form-control" />
+                <span asp-validation-for="In_Efternamn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Adress</label>
+                <input asp-for="In_Adress" class="form-control" />
+                <span asp-validation-for="In_Adress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Postnummer</label>
+                <input asp-for="In_Postnummer" class="form-control" />
+                <span asp-validation-for="In_Postnummer" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Ort</label>
+                <input asp-for="In_Ort" class="form-control" />
+                <span asp-validation-for="In_Ort" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Epost</label>
+                <input asp-for="In_Epost" class="form-control" />
+                <span asp-validation-for="In_Epost" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Mobilnummer</label>
+                <input asp-for="In_Mobil" class="form-control" />
+                <span asp-validation-for="In_Mobil" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Personnummer</label>
+                <input asp-for="In_Personnummer" class="form-control" />
+                <span asp-validation-for="In_Personnummer" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Spara ändring" class="btn btn-dark" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="ReadAllaInstruktorer" class="btn btn-dark">Tillbaka</a>
+</div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

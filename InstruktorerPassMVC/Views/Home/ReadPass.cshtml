@@ -1,0 +1,28 @@
+﻿@model InstruktorerPassMVC.Models.Pass
+
+@{
+    ViewData["Title"] = "Visa Pass";
+}
+
+<h2>Information om pass: @Html.DisplayFor(model => model.Pa_Id)</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Id
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Pa_Id)
+        </dd>
+        <dt>
+            Aktivitet
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Pa_Aktivitet)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="ReadAllaPass" class="btn btn-dark">Tillbaka</a>
+</div>

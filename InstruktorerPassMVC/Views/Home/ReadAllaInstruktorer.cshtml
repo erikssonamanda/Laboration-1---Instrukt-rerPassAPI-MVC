@@ -1,0 +1,93 @@
+﻿@model IEnumerable<InstruktorerPassMVC.Models.Instruktorer>
+
+@{
+    ViewData["Title"] = "Alla Instruktorer";
+}
+
+<h2>Alla Instruktörer</h2>
+
+<br />
+
+<input type="button" class="btn btn-dark" value="Lägg till ny instruktör" onclick="@("window.location.href='" + @Url.Action("CreateInstruktor", "Home") + "'");" />
+
+<br />
+<br />
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Förnamn
+            </th>
+            <th>
+                Efternamn
+            </th>
+            <th>
+                Adress
+            </th>
+            <th>
+                Postnummer
+            </th>
+            <th>
+                Ort
+            </th>
+            <th>
+                Epost
+            </th>
+            <th>
+                Mobilnummer
+            </th>
+            <th>
+                Personnummer
+            </th>
+            <th>Övrigt</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.In_Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.In_Fornamn)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.In_Efternamn)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.In_Adress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.In_Postnummer)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.In_Ort)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.In_Epost)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.In_Mobil)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.In_Personnummer)
+                </td>
+                <td>
+                    @Html.ActionLink("Ändra Adress", "UpdateAdress", new { id = item.In_Id })<br />
+                    @Html.ActionLink("Ändra Efternamn", "UpdateEfternamn", new { id = item.In_Id })<br />
+                    @Html.ActionLink("Ändra Epost", "UpdateEpost", new { id = item.In_Id })<br />
+                    @Html.ActionLink("Ändra Mobilnummer", "UpdateMobil", new { id = item.In_Id })<br />
+                    @Html.ActionLink("Visa Instruktör", "ReadInstruktor", new { id = item.In_Id })<br />
+                    @Html.ActionLink("Visa Alla Instruktörens Pass", "ReadInstruktorensPass", new { id = item.In_Id })<br />
+                    @Html.ActionLink("Radera Instruktör", "DeleteInstruktor", new { id = item.In_Id })<br />
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
