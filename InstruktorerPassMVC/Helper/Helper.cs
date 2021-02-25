@@ -11,7 +11,7 @@ namespace InstruktorerPassMVC.Helper
         public HttpClient Initial()
         {
             var Client = new HttpClient();
-            Client.BaseAddress = new Uri("http://localhost:52227");
+            Client.BaseAddress = new Uri("http://localhost:52228");
             return Client; 
         }
    }
