@@ -8,14 +8,17 @@ using System.Threading.Tasks;
 
 namespace InstruktorerPassMVC.Models
 {
-    public class RootObject
-    {
-        public List<InstruktorerPass> InstruktorerPass { get; set; }
-    }
     public class InstruktorerPass
     {
         public int IP_Id { get; set; }
+
+        [RegularExpression(@"^[0-9]{1,}$")]
+        [Required(ErrorMessage = "Instruktörens id kan bara innehålla siffror")]
         public int IP_InstruktorId { get; set; }
+
+        [RegularExpression(@"^[0-9]{1,}$")]
+        [Required(ErrorMessage = "Aktivitetens id kan bara innehålla siffror")]
         public int IP_PassId { get; set; }
     }
 }
+

@@ -10,7 +10,6 @@ using InstruktorerPassMVC.Helper;
 using System.Net.Http;
 using Newtonsoft.Json;
 using System.Net.Http.Json;
-using InstruktorerPassMVC.Data;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json.Linq;
 
