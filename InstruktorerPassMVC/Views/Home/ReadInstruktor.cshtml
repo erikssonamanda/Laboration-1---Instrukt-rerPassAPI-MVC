@@ -1,13 +1,13 @@
 ﻿@model InstruktorerPassMVC.Models.Instruktorer
 
-@{ 
+@{
     ViewData["Title"] = "Visa Instruktor";
 }
 
 <h2>Information om instruktör: @Html.DisplayFor(model => model.In_Id)</h2>
 
 <div>
-    <hr/>
+    <hr />
     <dl class="dl-horizontal">
         <dt>
             Id
@@ -65,6 +65,7 @@
         </dd>
     </dl>
 </div>
+<br />
 <div>
-    <a asp-action="ReadAllaInstruktorer">Tillbaka</a>  
+    <a asp-action="ReadAllaInstruktorer" class="btn btn-dark">Tillbaka</a>
 </div>
